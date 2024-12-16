@@ -1,0 +1,433 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  font-family: "Belleza", sans-serif;
+  background-color: #fff;
+}
+
+.header {
+  position: relative;
+}
+.header .header-bgc-container {
+  position: relative;
+  height: 450px;
+}
+.header .header-bgc-container .shadow-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+.header .header-bgc-container .logo-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.header .header-bgc-container .logo-container__logo-img {
+  margin-top: 30px;
+  width: 120px;
+  height: 120px;
+}
+.header .header-bgc-container .logo-container__belt {
+  margin: 5px;
+  margin-top: 89px;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.613);
+}
+.header .header-bgc-container__h1-header {
+  padding: 60px;
+  white-space: nowrap;
+  text-align: center;
+  color: #fec85f;
+}
+.header .header-bgc-container .video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+.header .header-bgc-container .video-container video {
+  -o-object-position: -660px -300px;
+     object-position: -660px -300px;
+  filter: grayscale(100%);
+}
+.header .nav-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #2d3436;
+}
+.header .nav-container .button-container {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+}
+.header .nav-container .button-container__burger {
+  font-size: 20px;
+  margin: 10px;
+  border: none;
+  overflow: hidden;
+  background-color: #2d3436;
+  color: #fec85f;
+  transition: transform 0.3s;
+}
+.header .nav-container .button-container__p {
+  margin: 10px;
+  font-size: 1.5rem;
+  color: #fec85f;
+}
+.header .nav-container .button-container .burger-active {
+  transform: rotate(90deg);
+}
+.header .nav-container .nav-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 300px;
+  left: 0px;
+  width: 100%;
+  background-color: #2d3436;
+  transition: transform 0.5s;
+}
+.header .nav-container .nav-mobile__a-mobile {
+  margin: 15px;
+  font-size: 1.2rem;
+  background: -webkit-linear-gradient(#eee, #f3e6e6);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+.header .nav-container .nav-mobile-active {
+  transform: translateY(-250px);
+  z-index: 1;
+  animation: fadeInNavMobile 1.5s ease;
+}
+@keyframes fadeInNavMobile {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.header .nav-container .nav-desktop {
+  display: none;
+  justify-content: space-around;
+  width: 80%;
+}
+.header .nav-container .nav-desktop__a-desktop {
+  position: relative;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.8rem;
+  margin: 50px;
+  transition: color 1s;
+}
+.header .nav-container .nav-desktop__a-desktop::before {
+  content: ""; /* Dodaj pusty zawartość dla pseudo-elementu */
+  position: absolute;
+  top: -35px;
+  left: 15%; /* Ustaw odpowiednią pozycję */
+  width: 120px;
+  height: 120px;
+  background-image: url("/dist/img/IMG_9091.png"); /* Dodaj obrazek jako tło */
+  background-size: cover; /* Dostosuj wielkość obrazka */
+  z-index: 0; /* Ustaw niższy indeks, aby był za tekstem */
+  opacity: 0.01; /* Zmniejsz opacity pseudo-elementu, aby był mniej wyraźny */
+  transition: transform 1s, opacity 1s; /* Łączenie animacji */
+}
+.header .nav-container .nav-desktop__a-desktop:hover::before {
+  transform: scale(1.28); /* Powiększ obrazek po najechaniu myszką */
+  opacity: 1; /* Zwiększ opacity pseudo-elementu, aby stał się bardziej wyraźny */
+  z-index: 2;
+}
+.header .nav-container .nav-desktop__a-desktop:hover {
+  color: #2d3436;
+}
+.header .nav-container .nav-desktop .nav-span {
+  display: none;
+}
+.header .nav-container .nav-desktop .nav-span .nav-img {
+  margin-top: 35px;
+  width: 60px;
+  height: 60px;
+}
+.header .nav-container-active {
+  height: 280px;
+  animation: expandNavContainer 0.2s ease-in;
+}
+@keyframes expandNavContainer {
+  from {
+    height: 35px;
+  }
+  to {
+    height: 250px;
+  }
+}
+
+.about-us {
+  overflow: hidden;
+  height: 300px;
+  background-color: black;
+}
+
+.bestRestaurans {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #2d3436;
+  overflow: hidden;
+}
+.bestRestaurans .slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.bestRestaurans .slider .slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.bestRestaurans .slider .slides .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* Dopasowanie wideo */
+  -o-object-position: top;
+     object-position: top; /* Ustawienie, aby wideo było wyrównane do góry */
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out, transform 1.8s ease;
+  transform: scale(0.6);
+  z-index: 0;
+  filter: brightness(0.5); /* Przyciemnienie tła */
+}
+.bestRestaurans .slider .slides .active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+  filter: brightness(0.6); /* Widoczne, ale nadal z cieniem */
+}
+.bestRestaurans .slider .content {
+  position: absolute;
+  top: 39%;
+  left: 10%;
+  color: #fff;
+  z-index: 10;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Dodanie cienia do tekstu */
+}
+.bestRestaurans .slider .content .title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.bestRestaurans .slider .content .description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  max-width: 400px;
+}
+.bestRestaurans .slider .content .cta-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fec85f;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.bestRestaurans .slider .content .cta-link:hover {
+  background-color: #f0d192;
+}
+.bestRestaurans .slider .indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+.bestRestaurans .slider .indicators .indicator {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.bestRestaurans .slider .indicators .indicator.active {
+  background-color: #fff;
+}
+
+.singleVideoSection {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.singleVideoSection .video-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.singleVideoSection .video-container .video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* Dopasowanie wideo */
+  -o-object-position: top;
+     object-position: top; /* Wyrównanie wideo do góry */
+  filter: brightness(0.5); /* Przyciemnienie wideo */
+  z-index: 0;
+}
+.singleVideoSection .video-container .content {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  color: #fff;
+  z-index: 10;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Dodanie cienia do tekstu */
+}
+.singleVideoSection .video-container .content .title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.singleVideoSection .video-container .content .description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  max-width: 400px;
+}
+.singleVideoSection .video-container .content .cta-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fec85f;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.singleVideoSection .video-container .content .cta-link:hover {
+  background-color: #cc5200;
+}
+
+.footer {
+  background-color: #111; /* Ciemne tło */
+  color: #fff; /* Biały tekst */
+  padding: 40px 0 20px; /* Większa górna padding dla nagłówka */
+  display: flex;
+  flex-direction: column; /* Układ kolumnowy */
+  justify-content: center;
+  align-items: center;
+}
+.footer .footer-container {
+  display: flex;
+  flex-direction: column; /* Nagłówek na górze, kontakty poniżej */
+  align-items: center;
+  gap: 20px; /* Odstęp między nagłówkiem a kontaktami */
+}
+.footer .footer-container .footer-title {
+  font-size: 2rem; /* Rozmiar czcionki nagłówka */
+  font-weight: bold;
+  color: #fec85f; /* Kolor nagłówka */
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Odstępy między literami */
+}
+.footer .footer-container .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Odstęp między ikoną a tekstem */
+}
+.footer .footer-container .contact-item .phone-icon, .footer .footer-container .contact-item .email-icon {
+  font-size: 1.5rem; /* Rozmiar ikony */
+  color: #fec85f; /* Kolor ikony */
+}
+.footer .footer-container .contact-item .contact-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+.footer .footer-container .contact-item .contact-text:hover {
+  color: #fec85f;
+}
+
+@media (min-width: 1068px) {
+  .header .header-bgc-container {
+    height: 600px;
+  }
+  .header .header-bgc-container .logo-container__logo-img {
+    width: 150px;
+    height: 150px;
+  }
+  .header .header-bgc-container .logo-container__belt {
+    margin-top: 100px;
+  }
+  .header .header-bgc-container__h1-header {
+    font-size: 6.5rem;
+    margin-top: 180px;
+    letter-spacing: 3px;
+  }
+  .header .header-bgc-container .video-container video {
+    -o-object-position: -180px -300px;
+       object-position: -180px -300px;
+  }
+  .header .nav-container {
+    justify-content: center;
+  }
+  .header .nav-container .button-container {
+    display: none;
+  }
+  .header .nav-container .nav-mobile {
+    display: none;
+  }
+  .header .nav-container .nav-desktop {
+    display: flex;
+  }
+  .header .nav-container .nav-desktop .nav-span {
+    display: flex;
+  }
+}/*# sourceMappingURL=main.css.map */
