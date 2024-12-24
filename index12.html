@@ -9,7 +9,7 @@
 
   <link rel="stylesheet" href="dist/css/main.min.css">
   <script src="https://kit.fontawesome.com/1b654c37e3.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
@@ -29,7 +29,7 @@
 
       <div class="logo-container">
         <div class="logo-container__belt"></div>
-        <img src="dist/img/IMG_9091.png" alt="" class="logo-container__logo-img">
+        <img src="/dist/img/IMG_9091.png" alt="" class="logo-container__logo-img">
         <div class="logo-container__belt"></div>
       </div>
       <h1 class="header-bgc-container__h1-header">Golema Group</h1>
@@ -70,35 +70,29 @@
   <!-- <section  class="about-us">
     <p>hejsdsdsdsd</p>
   </section> -->
-  <section class="bestRestaurans" id="bestRestaurans">
+   <section class="bestRestaurans" id="bestRestaurans">
     <div data-aos="new-animation2" data-aos-duration="1200" data-aos-offset="150" data-aos-once="false" class="slider">
-      <div class="slides" data-aos="fade-up">
-        <video class="slide" src="dist/video/TBR_vid (short) (1).mp4" autoplay muted loop playsinline
-          disablePictureInPicture controlsList="nodownload" data-title="The Best Restaurants" data-description="Polska firma gastronomiczna skupiona na rodzimym rynku
+      <div class="slides">
+        <video class="slide slide1" id="video1" muted loop data-title="The Best Restaurants"
+          data-description="Polska firma gastronomiczna skupiona na rodzimym rynku
 
+            " data-link="https://www.thebestrestaurants.pl"></video>
 
-          " data-link="https://www.thebestrestaurants.pl"></video>
-        <video class="slide" src="dist/video/Tratorria.mp4" autoplay muted loop
-          playsinline disablePictureInPicture controlsList="nodownload" data-title="Trattoria Toscana" data-description="Prostota i elegancja, ciepło domowego ogniska oraz radość i uśmiech spowodują, że zechcesz tu wrócić – Dolce Vita!
+        <video class="slide slide2" id="video2" muted loop data-title="Trattoria Toscana" data-description="Prostota i elegancja, ciepło domowego ogniska oraz radość i uśmiech spowodują, że zechcesz tu wrócić – Dolce Vita!
 
             " data-link="#trattoria"></video>
-        <video class="slide" src="dist/video/Venezia.mp4" autoplay muted loop playsinline
-          disablePictureInPicture controlsList="nodownload" data-title="Venezia" data-description="Caffe Club Venezia to miejsce z włoskim temperamentem, w którym hasło „dolce vita” nabiera właściwego wyrazu
+        <video class="slide slide3" id="video3" muted loop data-title="Venezia" data-description="Caffe Club Venezia to miejsce z włoskim temperamentem, w którym hasło „dolce vita” nabiera właściwego wyrazu
             " data-link="https://www.caffe-venezia.pl"></video>
-        <video class="slide" src="dist/video/KarczmaSz.mp4" autoplay muted loop
-          playsinline disablePictureInPicture controlsList="nodownload" data-title="Karczma Szczecin"
+        <video class="slide slide4" id="video4" muted loop data-title="Karczma Szczecin"
           data-description="Karczma Polska Pod Kogutem zaprasza na dania z tradycyjnej polskiej kuchni"
           data-link="https://www.karczmapodkogutem.eu"></video>
-        <video class="slide" src="dist/video/KarczmaSw.mp4" autoplay muted loop
-          playsinline disablePictureInPicture controlsList="nodownload" data-title="Karczma Swinoujscie"
+        <video class="slide slide5" id="video5" muted loop data-title="Karczma Swinoujscie"
           data-description="Karczma Polska Pod Kogutem zaprasza na domowe obiady"
           data-link="https://www.karczmapodkogutem.eu"></video>
-        <video class="slide" src="dist/video/Columbus_vid (online-video-cutter.com).mp4" autoplay muted loop playsinline
-          disablePictureInPicture controlsList="nodownload" data-title="Columbus Restaurant"
+        <video class="slide slide6" id="video6" muted loop data-title="Columbus Restaurant"
           data-description="Otwarta 1 maja 2000 roku, zaliczana do grona najlepszych lokali gastronomicznych w Polsce w swoim segmencie"
           data-link="http://walychrobrego.com/columbus"></video>
-        <video class="slide" src="dist/video/colorado-vid_8xAMjIy1.mp4" autoplay muted loop playsinline
-          disablePictureInPicture controlsList="nodownload" data-title="Colorado Steakhouse"
+        <video class="slide slide7" id="video7" muted loop data-title="Colorado Steakhouse"
           data-description="Najlepsze steki, a w dodatku serwowane z najlepszym widokiem na rzekę, Łasztownię i Starówkę"
           data-link="http://walychrobrego.com/colorado"></video>
       </div>
@@ -136,13 +130,54 @@
         <div class="indicator" data-index="6">Colorado</div>
       </div>
 
-  </section>
 
+      <script>
+        // Funkcja zmieniająca źródła wideo
+        function updateVideoSrc() {
+          const mediaQuery = window.matchMedia("(min-width: 1068px)");
+
+          // Zmiana źródeł wideo w zależności od rozmiaru ekranu
+          if (mediaQuery.matches) {
+            // Ustawienie nowych źródeł wideo dla ekranów większych niż 1068px
+            document.getElementById('video1').src = 'dist/video/TBR_vid (short) (1).mp4';
+            document.getElementById('video2').src = '/dist/video/Tratoria/TrattoriaToscana_desktop.mp4';
+            document.getElementById('video3').src = 'dist/video/Venezia/CaffeVenezia_desktop.mp4';
+            document.getElementById('video4').src = 'dist/video/KarczmaSZ/KarczmaSzczecin_desktop.mp4';
+            document.getElementById('video5').src = 'dist/video/KarczmaSW/KarczmaSwinoujscie_desktop.mp4';
+            document.getElementById('video6').src = 'dist/video/Columbus/Columbus_desktop.mp4';
+            document.getElementById('video7').src = 'dist/video/Colorado/Colorado_desktop.mp4';
+           
+          } else {
+            // Ustawienie źródeł wideo dla ekranów mniejszych niż 1068px
+            document.getElementById('video1').src = 'dist/video/TBR_vid (short) (1).mp4';
+            document.getElementById('video2').src = '/dist/video/Tratoria/TrattoriaToscana_mobile.mp4';
+            document.getElementById('video3').src = 'dist/video/Venezia/TrattoriaToscana_mobile.mp4';
+            document.getElementById('video4').src = 'dist/video/KarczmaSZ/KarczmaSzczecin_desktop.mp4';
+            document.getElementById('video5').src = 'dist/video/KarczmaSW/KarczmaSwinoujscie_desktop.mp4';
+            document.getElementById('video6').src = 'dist/video/Columbus/Columbus_mobile.mp4';
+            document.getElementById('video7').src = 'dist/video/Colorado/Colorado_mobile.mp4';
+           
+          }
+        }
+
+        // Nasłuchiwanie na zmiany w media query
+        window.matchMedia("(min-width: 1068px)").addEventListener("change", updateVideoSrc);
+
+        // Wywołanie funkcji przy załadowaniu strony
+        updateVideoSrc();
+      </script>
+
+  </section>
+  
   <section id="DobraPączkarnia" class="singleVideoSection">
-    <div data-aos="new-animation" data-aos-easing="new-easing" data-aos-duration="1200"
-      data-aos-offset="300" data-aos-once="false" class="video-container">
-      <video class="video" autoplay muted loop playsinline disablePictureInPicture controlsList="nodownload">
-        <source src="dist/video/dobrapaczkarnia.mp4" type="video/mp4">
+    <div data-aos="new-animation" data-aos-easing="new-easing" data-aos-duration="1200" data-aos-offset="300"
+      data-aos-once="false" class="video-container">
+      <video class="video video-desktop" autoplay muted loop disablePictureInPicture>
+        <source src="dist/video/DobraPaczkarnia/DobraPaczkarnia_desktop.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video class="video video-mobile" autoplay muted loop disablePictureInPicture>
+        <source src="dist/video/DobraPaczkarnia/DobraPaczkarnia_mobile.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <div class="content">
@@ -159,11 +194,11 @@
 
     <div data-aos="new-animation2" data-aos-duration="1200" data-aos-offset="150" data-aos-once="false"
       class="video-container">
-      <video class="video video-desktop" autoplay muted loop playsinline disablePictureInPicture controlsList="nodownload">
+      <video class="video video-desktop" autoplay muted loop disablePictureInPicture>
         <source src="dist/video/DobrePrecle_vid (slides) (6).mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <video class="video video-mobile" autoplay muted loop playsinline disablePictureInPicture controlsList="nodownload">
+      <video class="video video-mobile" autoplay muted loop disablePictureInPicture>
         <source src="dist/video/dobreprecle-vid_xN3UYNDN (1).mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -171,7 +206,7 @@
         <h1 class="title">Dobre Precle</h1>
         <p class="description">Kto raz spróbuje naszych precli, ten zrozumie, skąd się wzięła popularność tych wypieków.
         </p>
-        <a href="https://dobreprecle.pl" class="cta-link">Learn More</a>
+        <a href="https://dobreprecle.pl" class="cta-link">Zobacz więcej</a>
       </div>
     </div>
   </section>
@@ -179,7 +214,7 @@
 
 
   <footer class="footer">
-    <img src="dist/img/IMG_9091.png" alt="Golema Group Logo" class="footer-logo" />
+    <img src="/dist/img/IMG_9091.png" alt="Golema Group Logo" class="footer-logo" />
     <div class="footer-container">
       <div class="footer-title">Golema Group</div>
       <div class="contact-item">
@@ -188,7 +223,7 @@
       </div>
       <div class="contact-item">
         <i class="fas fa-envelope email-icon"></i>
-        <span class="contact-text">pg.golemagroup@gmail.com</span>
+        <span class="contact-text">golemagroup@gmail.com</span>
       </div>
     </div>
   </footer>
@@ -201,7 +236,7 @@
   <!-- Dodaj link do Font Awesome w sekcji <head> -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
 
-  <script src="dist/js/script.min.js"></script>
+  <script src="/dist/js/script.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <script>
