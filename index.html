@@ -165,17 +165,7 @@
             document.getElementById('video7').src = 'dist/video/Colorado/Colorado_mobile.mp4';
 
           }
-          const videos = document.querySelectorAll('video');
-          videos.forEach((video) => {
-            // Wyłączenie Picture-in-Picture
-            video.disablePictureInPicture = true;
-
-            // Dodatkowe zabezpieczenie - blokowanie aktywacji PiP
-            video.addEventListener('enterpictureinpicture', function (event) {
-              event.preventDefault();
-              console.log("Picture-in-Picture jest zablokowane!");
-            });
-          });
+        
         }
 
         // Nasłuchiwanie na zmiany w media query
