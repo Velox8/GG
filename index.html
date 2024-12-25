@@ -73,31 +73,31 @@
   <section class="bestRestaurans" id="bestRestaurans">
     <div data-aos="new-animation2" data-aos-duration="1200" data-aos-offset="150" data-aos-once="false" class="slider">
       <div class="slides">
-        <video class="slide slide1" id="video1" muted loop disablePictureInPicture controlsList="nodownload"
+        <video class="slide slide1 slide1m" id="video1" muted loop disablePictureInPicture controlsList="nodownload"
           data-title="The Best Restaurants" data-description="Polska firma gastronomiczna skupiona na rodzimym rynku
 
             " data-link="https://www.thebestrestaurants.pl" style="pointer-events: none;"></video>
 
-        <video class="slide slide2" id="video2" muted loop disablePictureInPicture controlsList="nodownload"
+        <video class="slide slide2 slide2m" id="video2" muted loop disablePictureInPicture controlsList="nodownload"
           data-title="Trattoria Toscana" data-description="Prostota i elegancja, ciepło domowego ogniska oraz radość i uśmiech spowodują, że zechcesz tu wrócić – Dolce Vita!
 
             " data-link="#trattoria" style="pointer-events: none;"></video>
-        <video class="slide slide3" id="video3" muted loop disablePictureInPicture controlsList="nodownload"
+        <video class="slide slide3 slide3m" id="video3" muted loop disablePictureInPicture controlsList="nodownload"
           data-title="Venezia"
           data-description="Caffe Club Venezia to miejsce z włoskim temperamentem, w którym hasło „dolce vita” nabiera właściwego wyrazu"
           data-link="https://www.caffe-venezia.pl" style="pointer-events: none;"></video>
-        <video class="slide slide4" id="video4" muted loop disablePictureInPicture controlsList="nodownload"
+        <video class="slide slide4 slide4m" id="video4" muted loop disablePictureInPicture controlsList="nodownload"
           data-title="Karczma Szczecin"
           data-description="Karczma Polska Pod Kogutem zaprasza na dania z tradycyjnej polskiej kuchni"
           data-link="https://www.karczmapodkogutem.eu" style="pointer-events: none;"></video>
-        <video class="slide slide5" id="video5" muted loop disablePictureInPicture controlsList="nodownload"
+        <video class="slide slide5 slide5m" id="video5" muted loop disablePictureInPicture controlsList="nodownload"
           data-title="Karczma Swinoujscie" data-description="Karczma Polska Pod Kogutem zaprasza na domowe obiady"
           data-link="https://www.karczmapodkogutem.eu" style="pointer-events: none;"></video>
-        <video class="slide slide6" id="video6" muted loop disablePictureInPicture controlsList="nodownload"
+        <video class="slide slide6 slide6m" id="video6" muted loop disablePictureInPicture controlsList="nodownload"
           data-title="Columbus Restaurant"
           data-description="Otwarta 1 maja 2000 roku, zaliczana do grona najlepszych lokali gastronomicznych w Polsce w swoim segmencie"
           data-link="http://walychrobrego.com/columbus" style="pointer-events: none;"></video>
-        <video class="slide slide7" id="video7" muted loop disablePictureInPicture controlsList="nodownload"
+        <video class="slide slide7 slide7m" id="video7" muted loop disablePictureInPicture controlsList="nodownload"
           data-title="Colorado Steakhouse"
           data-description="Najlepsze steki, a w dodatku serwowane z najlepszym widokiem na rzekę, Łasztownię i Starówkę"
           data-link="http://walychrobrego.com/colorado" style="pointer-events: none;"></video>
@@ -165,16 +165,16 @@
 
           }
           const videos = document.querySelectorAll('video');
-  videos.forEach((video) => {
-    // Wyłączenie Picture-in-Picture
-    video.disablePictureInPicture = true;
+          videos.forEach((video) => {
+            // Wyłączenie Picture-in-Picture
+            video.disablePictureInPicture = true;
 
-    // Dodatkowe zabezpieczenie - blokowanie aktywacji PiP
-    video.addEventListener('enterpictureinpicture', function (event) {
-      event.preventDefault();
-      console.log("Picture-in-Picture jest zablokowane!");
-    });
-  });
+            // Dodatkowe zabezpieczenie - blokowanie aktywacji PiP
+            video.addEventListener('enterpictureinpicture', function (event) {
+              event.preventDefault();
+              console.log("Picture-in-Picture jest zablokowane!");
+            });
+          });
         }
 
         // Nasłuchiwanie na zmiany w media query
