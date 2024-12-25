@@ -138,52 +138,7 @@
       </div>
 
 
-      <script>
-        // Funkcja zmieniająca źródła wideo
-        function updateVideoSrc() {
-          const mediaQuery = window.matchMedia("(min-width: 1068px)");
 
-          // Zmiana źródeł wideo w zależności od rozmiaru ekranu
-          if (mediaQuery.matches) {
-            // Ustawienie nowych źródeł wideo dla ekranów większych niż 1068px
-            document.getElementById('video1').src = 'dist/video/TBR_vid (short) (1).mp4';
-            document.getElementById('video2').src = 'dist/video/Tratoria/TrattoriaToscana_desktop.mp4';
-            document.getElementById('video3').src = 'dist/video/Venezia/CaffeVenezia_desktop.mp4';
-            document.getElementById('video4').src = 'dist/video/KarczmaSZ/KarczmaSzczecin_desktop.mp4';
-            document.getElementById('video5').src = 'dist/video/KarczmaSW/KarczmaSwinoujscie_desktop.mp4';
-            document.getElementById('video6').src = 'dist/video/Columbus/Columbus_desktop.mp4';
-            document.getElementById('video7').src = 'dist/video/Colorado/Colorado_desktop.mp4';
-
-          } else {
-            // Ustawienie źródeł wideo dla ekranów mniejszych niż 1068px
-            document.getElementById('video1').src = 'dist/video/TBR_vid (short) (1).mp4';
-            document.getElementById('video2').src = 'dist/video/Tratoria/TrattoriaToscana_mobile.mp4';
-            document.getElementById('video3').src = 'dist/video/Venezia/TrattoriaToscana_mobile.mp4';
-            document.getElementById('video4').src = 'dist/video/KarczmaSZ/KarczmaSzczecin_desktop.mp4';
-            document.getElementById('video5').src = 'dist/video/KarczmaSW/KarczmaSwinoujscie_desktop.mp4';
-            document.getElementById('video6').src = 'dist/video/Columbus/Columbus_mobile.mp4';
-            document.getElementById('video7').src = 'dist/video/Colorado/Colorado_mobile.mp4';
-
-          }
-          const videos = document.querySelectorAll('video');
-          videos.forEach((video) => {
-            // Wyłączenie Picture-in-Picture
-            video.disablePictureInPicture = true;
-
-            // Dodatkowe zabezpieczenie - blokowanie aktywacji PiP
-            video.addEventListener('enterpictureinpicture', function (event) {
-              event.preventDefault();
-              console.log("Picture-in-Picture jest zablokowane!");
-            });
-          });
-        }
-
-        // Nasłuchiwanie na zmiany w media query
-        window.matchMedia("(min-width: 1068px)").addEventListener("change", updateVideoSrc);
- 
-        // Wywołanie funkcji przy załadowaniu strony
-        updateVideoSrc();
-      </script>
 
   </section>
 
@@ -266,6 +221,7 @@
       once: true
     });
   </script>
+<!-- https://velox8.github.io/GG/?fbclid=IwY2xjawHYxHJleHRuA2FlbQIxMAABHaYzdGDYT1ptaQeoFX3S2rxwaRXOSrxZ09Rj6yWMXY-jw-00n0HGKwHGCQ_aem_OLKkyR9MiqTVCxgoDfhcug -->
 </body>
 
 </html>
